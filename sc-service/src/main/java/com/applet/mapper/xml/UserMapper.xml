@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.applet.mapper.UserDao">
+  <resultMap id="BaseResultMap"  type="com.commons.entity.User">
+  <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="open_id" jdbcType="VARCHAR" property="openId" />
+    <result column="union_id" jdbcType="VARCHAR" property="unionId" />
+    <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="passwd" jdbcType="VARCHAR" property="passwd" />
+    <result column="pay_passwd" jdbcType="VARCHAR" property="payPasswd" />
+    <result column="avatar_url" jdbcType="VARCHAR" property="avatarUrl" />
+    <result column="gender" jdbcType="INTEGER" property="gender" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="province" jdbcType="VARCHAR" property="province" />
+    <result column="country" jdbcType="VARCHAR" property="country" />
+    <result column="def_role" jdbcType="INTEGER" property="defRole" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="session_key" jdbcType="VARCHAR" property="sessionKey" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="Invite_code" jdbcType="VARCHAR" property="inviteCode" />
+    <result column="is_online" jdbcType="INTEGER" property="isOnline" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="status" jdbcType="BIT" property="status" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+
+</mapper>

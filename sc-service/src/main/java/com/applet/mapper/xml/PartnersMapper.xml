@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.applet.mapper.PartnersDao">
+  <resultMap id="BaseResultMap" type="com.commons.entity.Partners">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="partners_id" jdbcType="BIGINT" property="partnersId" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, partners_id, status, create_time
+  </sql>
+    <sql id="where_conditions">
+        <where>
+            1=1
+            <if test="record.id != null">
+               and id = #{record.id,jdbcType=BIGINT}
+            </if>
+            <if test="record.userId != null">
+                and user_id = #{record.userId,jdbcType=BIGINT}
+            </if>
+            <if test="record.partnersId != null">
+                and partners_id = #{record.partnersId,jdbcType=BIGINT}
+            </if>
+            <if test="record.status != null">
+                and status = #{record.status,jdbcType=INTEGER}
+            </if>
+            <if test="record.createTime != null">
+                and create_time = #{record.createTime,jdbcType=TIMESTAMP}
+            </if>
+        </where>
+    </sql>
+    <select id="findPartnerss" parameterType="com.commons.dto.applet.PartnersDTO" resultMap="BaseResultMap">
+        select  <include refid="Base_Column_List" />
+        from t_partners
+        <include refid="where_conditions"/>
+    </select>
+</mapper>

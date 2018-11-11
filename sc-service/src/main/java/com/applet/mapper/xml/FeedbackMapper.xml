@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.applet.mapper.FeedbackDao">
+  <resultMap id="BaseResultMap" type="com.commons.entity.Feedback">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="is_feedback" jdbcType="INTEGER" property="isFeedback" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+    <sql id="Base_Column_List">
+        id, user_id, type, content, create_time, remark, is_feedback
+    </sql>
+    <sql id="where_conditions">
+        <where>
+            1=1
+            <if test="isFeedback!=null">
+                AND is_feedback=#{isFeedback}
+            </if>
+            <if test="type!=null">
+                AND type=#{type}
+            </if>
+        </where>
+    </sql>
+    <select id="findFeedbacks" parameterType="com.commons.dto.applet.feedback.FeedbackListDTO" resultMap="BaseResultMap">
+        select  <include refid="Base_Column_List" />
+        from t_feedback
+        <include refid="where_conditions"/>
+    </select>
+</mapper>
