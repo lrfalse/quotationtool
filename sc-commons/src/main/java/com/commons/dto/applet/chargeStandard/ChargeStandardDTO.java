@@ -5,6 +5,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /** 
   * @Description(功能描述): 收费标准
   * @author(作者): lrfalse<wangliyou>
@@ -14,6 +17,8 @@ import lombok.Data;
 @ApiModel("收费标准")
 public class ChargeStandardDTO extends PageDTO{
 
+	@Id
+	private Long id;
     /**
      * 用户id
      */
@@ -38,5 +43,6 @@ public class ChargeStandardDTO extends PageDTO{
 	@ApiModelProperty(value = "备注",name = "remark",dataType = "String")
     private String remark;
 
+	private  String createTime;
 
 }

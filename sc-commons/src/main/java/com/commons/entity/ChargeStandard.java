@@ -13,7 +13,7 @@ import javax.persistence.Table;
   * @date (开发日期): 2018/10/13 15:22
   **/
 @Data
-@ApiModel(value = "收费标准参数对象", description = "收费标准")
+@ApiModel(value = "ChargeStandard", description = "收费标准参数对象")
 @Table(name="t_charge_standard")
 public class ChargeStandard extends BaseEntity {
 

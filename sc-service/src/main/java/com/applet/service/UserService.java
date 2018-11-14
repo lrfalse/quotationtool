@@ -14,5 +14,6 @@ import org.springframework.stereotype.Service;
 public interface UserService {
 
 	ResultMessage saveUser(User user);
+	ResultMessage getUser(String userId);
 
 }

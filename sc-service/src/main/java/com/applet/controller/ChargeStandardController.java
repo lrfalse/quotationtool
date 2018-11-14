@@ -30,13 +30,13 @@ public class ChargeStandardController {
 	@Autowired
 	private ChargeStandardService chargeStandardService;
 
-	@ApiOperation(value = "新增收费标准")
+	@ApiOperation(value = "新增收费标准",response =ChargeStandard.class )
 	@ResponseBody
 	@PatchMapping(value = "/addChargeStandard")
-	public ResponseMessage addChargeStandard(@Valid @RequestBody ChargeStandard chargeStandard) {
+	public ResponseMessage addChargeStandard(@Valid  ChargeStandard chargeStandard) {
 		return ResponseMessage.result(chargeStandardService.saveChargeStandard(chargeStandard));
 	}
-	@ApiOperation(value = "产品收费列表")
+	@ApiOperation(value = "产品收费列表" ,response = ChargeStandard.class)
 	@ResponseBody
 	@GetMapping(value = "/findChargeStandards")
 	public ResponseMessage findChargeStandards(ChargeStandardDTO chargeStandardDTO) {
@@ -45,7 +45,7 @@ public class ChargeStandardController {
 	}
 
 
-	@ApiOperation(value = "产品类型列表")
+	@ApiOperation(value = "产品类型列表" ,response = ProductType.class)
 	@ResponseBody
 	@GetMapping(value = "/findProductTypes")
 	public ResponseMessage findProductTypes(ProductTypeDTO productTypeDTO) {

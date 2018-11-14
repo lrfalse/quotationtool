@@ -23,4 +23,9 @@ public class UserServiceImpl implements UserService {
 	public ResultMessage saveUser(User user) {
 		return ResultMessage.build(userDao.insert(user));
 	}
+
+	@Override
+	public ResultMessage getUser(String userId) {
+		return ResultMessage.build(userDao.selectByPrimaryKey(userId));
+	}
 }
