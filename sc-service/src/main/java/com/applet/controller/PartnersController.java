@@ -3,6 +3,7 @@ package com.applet.controller;
 import com.commons.dto.applet.PartnersDTO;
 import com.commons.message.ResponseMessage;
 import com.commons.entity.Partners;
+import com.commons.vo.UserInfoVO;
 import com.github.pagehelper.PageHelper;
 import com.applet.service.PartnersService;
 import io.swagger.annotations.Api;
@@ -34,7 +35,7 @@ public class PartnersController {
 	public ResponseMessage updatePartners(@Valid Partners partners) {
 		return ResponseMessage.result(partnersService.updatePartners(partners));
 	}
-	@ApiOperation(value = "我的合作商列表")
+	@ApiOperation(value = "我的合作商列表",response = Partners.class)
 	@GetMapping(value = "/findPartners")
 	public ResponseMessage findPartners(PartnersDTO partnersDTO) {
 		PageHelper.startPage(partnersDTO.getPageNum(),partnersDTO.getPageSize());

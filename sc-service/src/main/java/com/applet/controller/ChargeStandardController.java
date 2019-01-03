@@ -1,5 +1,6 @@
 package com.applet.controller;
 
+import com.commons.dto.applet.ProductTypeAddDTO;
 import com.commons.dto.applet.ProductTypeDTO;
 import com.commons.dto.applet.chargeStandard.ChargeStandardDTO;
 import com.commons.message.ResponseMessage;
@@ -56,9 +57,10 @@ public class ChargeStandardController {
 	@ApiOperation(value = "新增产品类型")
 	@ResponseBody
 	@GetMapping(value = "/addProductTypes")
-	public ResponseMessage addProductTypes(ProductTypeDTO productTypeDTO) {
+	public ResponseMessage addProductTypes(ProductTypeAddDTO productTypeDTO) {
 		ProductType productType=new ProductType();
 		BeanUtils.copyProperties(productTypeDTO,productType);
+		//System.out.println(ResponseMessage.result(productTypeService.saveProductType(productType)));
 		return ResponseMessage.result(productTypeService.saveProductType(productType));
 	}
 }

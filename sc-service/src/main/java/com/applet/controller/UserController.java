@@ -29,7 +29,7 @@ public class UserController {
 
 	@ApiOperation(value = "保存用户信息")
 	@ResponseBody
-	@PatchMapping(value = "/addUser")
+	@PostMapping(value = "/addUser")
 	public ResponseMessage addUser(@Valid User user) {
 		return ResponseMessage.result(userService.saveUser(user));
 	}

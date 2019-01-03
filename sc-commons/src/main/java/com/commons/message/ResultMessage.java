@@ -38,13 +38,6 @@ public class ResultMessage implements Serializable {
     }
 
     public String getMessage() {
-//        String msg = "";
-//        try{
-//            msg = new String(file.getBytes(), "UTF-8");
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return msg;
         return message;
     }
 

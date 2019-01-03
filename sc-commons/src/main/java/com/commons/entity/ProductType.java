@@ -1,6 +1,7 @@
 package com.commons.entity;
 
 import com.commons.base.BaseEntity;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
@@ -13,6 +14,7 @@ import javax.persistence.Table;
   **/
 @Data
 @Table(name="t_product_type")
+@ApiModel(value = "ProductType", description = "产品类型")
 public class ProductType extends BaseEntity {
 
 

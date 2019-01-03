@@ -14,20 +14,20 @@
     <sql id="where_conditions">
         <where>
             1=1
-            <if test="record.id != null">
-               and id = #{record.id,jdbcType=BIGINT}
+            <if test="id != null">
+               and id = #{id,jdbcType=BIGINT}
             </if>
-            <if test="record.userId != null">
-                and user_id = #{record.userId,jdbcType=BIGINT}
+            <if test="userId != null">
+                and user_id = #{userId,jdbcType=BIGINT}
             </if>
-            <if test="record.partnersId != null">
-                and partners_id = #{record.partnersId,jdbcType=BIGINT}
+            <if test="partnersId != null">
+                and partners_id = #{partnersId,jdbcType=BIGINT}
             </if>
-            <if test="record.status != null">
-                and status = #{record.status,jdbcType=INTEGER}
+            <if test="status != null">
+                and status = #{status,jdbcType=INTEGER}
             </if>
-            <if test="record.createTime != null">
-                and create_time = #{record.createTime,jdbcType=TIMESTAMP}
+            <if test="createTime != null">
+                and create_time = #{createTime,jdbcType=TIMESTAMP}
             </if>
         </where>
     </sql>

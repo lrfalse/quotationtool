@@ -13,7 +13,7 @@ import javax.persistence.Table;
   * @date (开发日期): 2018/10/20 22:42
   **/
 @Data
-@ApiModel(value = "我的合作商", description = "我的收藏")
+@ApiModel(value = "Partners", description = "我的收藏")
 @Table(name="t_partners")
 public class Partners  extends BaseEntity {
 
@@ -26,13 +26,13 @@ public class Partners  extends BaseEntity {
     /**
      * 合作商id
      */
-	@ApiModelProperty(value = "用户id",name = "userId",dataType = "Long")
+	@ApiModelProperty(value = "合作商id",name = "partnersId",dataType = "Long")
     private Long partnersId;
 
     /**
      * 需求状态(0关注，1取消关注)
      */
-	@ApiModelProperty(value = "用户id",name = "userId",dataType = "Long")
+	@ApiModelProperty(value = "需求状态(0关注，1取消关注)",name = "status",dataType = "Long")
     private Integer status;
 
 

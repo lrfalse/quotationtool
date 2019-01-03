@@ -3,6 +3,7 @@ package com.commons.dto.applet;
 import com.commons.dto.PageDTO;
 import lombok.Data;
 
+import javax.persistence.Id;
 import java.util.Date;
 
 /**
@@ -13,6 +14,8 @@ import java.util.Date;
 @Data
 public class DemandDTO extends PageDTO{
 
+	@Id
+	private Long id;
     /**
      * 用户id
      */
